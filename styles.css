@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Dongle&family=Luxurious+Roman&family=Oswald&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+:root {
+  --border-radius: 10px;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  font-family: "Luxurious Roman", cursive;
+  color: #fff;
+  /* font-family: "Oswald", sans-serif; */
+  font-size: normal;
+}
+
+section {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 80px;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height:250px;
+  background: #000;
+  border-radius: 50%;
+  left: 20px;
+  top: 10px;
+  transform: translate(0px, 0px);
+  z-index: -100;
+  background: linear-gradient(to  bottom right, #387ecf, #d95b21 )
+}
+section::after {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: #000;
+  border-radius: 50%;
+  right: 40px;
+  bottom:  50px;
+  background: linear-gradient(to  top left, #960507,  #155c5b )
+}
+.card {
+  position: relative;
+  min-width: 500px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: baseline;
+  gap: 30px;
+  padding: 20px;
+  /* background-color: #549eff; */
+  background: rgba(0, 0, 0, 0.78);
+  border-radius: var(--border-radius);
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2),
+    -5px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  z-index: 50;
+  /* overflow: hidden; */
+}
+
+.image--container {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  /* border: 2px solid red; */
+  border-radius: var(--border-radius);
+}
+.image--container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contents {
+  text-transform: capitalize;
+  line-height: 30px;
+  letter-spacing: 1.5px;
+  flex-grow: 1;
+}
+
+.contents .name span {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.contents .position {
+  font-size: 1.1rem;
+  color: #ebebeb;
+}
+.card .worth span {
+  font-size: 0;
+  font-family: "Luxurious Roman", cursive;
+  color: #fff;
+  transition: all 800ms;
+}
+.card--icon .fas.fa-check {
+  position: absolute;
+  right: 5px;
+  top: 8px;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #7ae820;
+  transform: translate(20px, -20px);
+}
+.card--1 {
+  background: #387ecf;
+  transition: all 500ms;
+}
+.card--1:hover {
+  /* box-shadow: none; */
+  transform: scale(1.02);
+}
+.card--1:hover .worth span {
+  font-size: 3rem;
+  transform: rotate(-15deg);
+  font-weight: bolder;
+  display: block;
+}
+.card--1::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 40px;
+  bottom: 0;
+  width: 5px;
+  background: rgba(0, 0, 0, 0.78);
+  /* border-radius: var(--border-radius); */
+  height: 100%;
+  transform: translate(0px, 120px);
+  /* background-color: red; */
+  z-index: -2;
+}
+
+.card--2 {
+  background: #d95b21;
+  transform: translateX(-135px);
+  transition: all 500ms;
+}
+.card--2::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 5px;
+  background: rgba(0, 0, 0, 0.78);
+  /* border-radius: var(--border-radius); */
+  height: 100%;
+  transform: translate(0px, 120px);
+}
+.card--2:hover {
+  transform: translateX(-140px) scale(1.02);
+  box-shadow: none;
+}
+.card--2:hover .worth span {
+  font-size: 3rem;
+  transform: rotate(-15deg);
+  font-weight: bolder;
+  display: block;
+}
+
+.card--3 {
+  background: #155c5b;
+  transition: all 500ms;
+}
+.card--3::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 5px;
+  background: rgba(0, 0, 0, 0.78);
+  /* border-radius: var(--border-radius); */
+  height: 100%;
+  transform: translate(0px, 120px);
+}
+.card--3:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: none;
+}
+.card--3:hover .worth span {
+  font-size: 3rem;
+  font-weight: bolder;
+  display: block;
+  transform: rotate(-15deg);
+}
+.card--4 {
+  background: #960507;
+  transform: translateX(125px);
+  transition: all 500ms;
+}
+
+.card--4:hover {
+  transform: translateX(130px) scale(1.02);
+  box-shadow: none;
+}
+.card--4:hover .worth span {
+  font-size: 3rem;
+  font-weight: bolder;
+  display: block;
+  transform: rotate(-15deg);
+}
